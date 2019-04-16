@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: org.springframework:spring-context-support:5.1.5.RELEASE">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../gradle-4.9/caches/modules-2/files-2.1/org.springframework/spring-context-support/5.1.5.RELEASE/b6c4877e5cad1cbf72c3ff2c65eb62f2c89e5e8b/spring-context-support-5.1.5.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

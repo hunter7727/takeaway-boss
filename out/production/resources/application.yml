@@ -1,0 +1,8 @@
+server:
+  port: 8100
+
+spring:
+  # 系统使用的环境
+  profiles:
+    active: dev
+

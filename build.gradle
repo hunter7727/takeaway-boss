@@ -1,0 +1,59 @@
+group 'com.pmdiss'
+version '1.0'
+
+buildscript {
+    ext {
+        springBootVersion = '2.1.3.RELEASE'
+    }
+    repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+sourceCompatibility = 1.8
+targetCompatibility = '1.8'
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.mybatis.spring.boot:mybatis-spring-boot-starter:1.3.2'
+    compile 'mysql:mysql-connector-java:5.1.45'
+
+    compile 'org.mybatis:mybatis-typehandlers-jsr310:1.0.2'
+    // 分页
+    compile 'com.github.pagehelper:pagehelper-spring-boot-starter:1.2.4'
+    compile 'com.alibaba:druid:1.1.6'
+    compile 'com.alibaba:fastjson:1.2.38'
+    // Swagger
+    compile('io.springfox:springfox-swagger-ui:2.9.2')
+    compile('io.springfox:springfox-swagger2:2.9.2')
+    // common
+    compile('org.apache.commons:commons-lang3:3.4')
+    compile('org.apache.commons:commons-collections4:4.1')
+    compile('commons-io:commons-io:2.6')
+    compile group: 'org.apache.commons', name: 'commons-math3', version: '3.6.1'
+    //lombok
+    compile group: 'org.projectlombok', name: 'lombok', version: '1.16.20'
+    //springboot-redis
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-redis', version: '2.1.3.RELEASE'
+
+}
+
+bootJar {
+    mainClassName = 'com.pmdiss.TakeawayBossApplication'
+}
+

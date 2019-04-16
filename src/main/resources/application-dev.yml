@@ -1,0 +1,32 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://xxx.xxx.xxx.xxx/xxx?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: xxx
+    password: xxx
+    type: com.alibaba.druid.pool.DruidDataSource
+    initial-size: 5
+    min-idle: 5
+    max-active: 20
+    max-wait: 2000
+    test-on-borrow: true
+    test-while-idle: true
+    time-between-eviction-runs-millis: 60000
+    validation-query: select 'x'
+    filters: stat
+  #redis配置
+  redis:
+    host: xxx.xxx.xxx.xxx
+    port: 6379
+    timeout: 1000
+    poll:
+      max-active: 2048
+      max-wait: -1
+      max-idle: 200
+
+mybatis:
+  config-location: classpath:/mybatis-config.xml
+  mapper-locations: classpath:/mappers/*.xml
+
+pagehelper:
+  helper-dialect: mysql
